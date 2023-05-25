@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,14 +20,22 @@
       <h2>Events in Action</h2>
       <button v-on:click="add(5)">Add</button>
       <button v-on:click="decrement()">Remove</button>
+      <p v-once>Starting Counter: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
-      <input type="text" v-on:input="setName" v-on:keyup.enter  ="confirmInput">
+      <input
+        type="text"
+        v-bind:value="name"
+        v-on:input="setName"
+        v-on:keyup.enter="confirmInput"
+      />
+
+      <button v-on:click="resetInput">Reset Input</button>
+
       <p>Your Name: {{ conformedName }}</p>
       <form v-on:submit.prevent="submitForm">
-        <input type="text">
+        <input type="text" />
         <button>Sign up</button>
       </form>
     </section>
   </body>
 </html>
-

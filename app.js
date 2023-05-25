@@ -1,7 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
-      counter: 0,
+      counter: 10,
       name: '',
       conformedName: '',
     };
@@ -11,7 +11,7 @@ const app = Vue.createApp({
       this.conformedName = this.name;
     },
     submitForm(e) {
-      alert('Form Submitted')
+      alert('Form is Submitted !!!')
       // e.preventDefault()
     },
     setName(e) {
@@ -22,6 +22,10 @@ const app = Vue.createApp({
     },
     decrement() {
       this.counter--;
+    },
+    resetInput(){
+      // document.querySelector('input').value  = '';
+      this.name = '';
     }
   }
 });
